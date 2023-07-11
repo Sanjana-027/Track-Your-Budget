@@ -1,0 +1,37 @@
+.main-container {
+
+    h2 {
+        text-align: center;
+        margin-top: 60px;
+        color: white;
+    }
+
+    .card {
+        background: white;
+        text-align: center;
+        width: 30%;
+        margin: auto;
+        margin-top: 35px;
+        border-radius: 15px;
+
+        img {
+            height: 224px;
+            object-fit: cover;
+            width: 100%;
+            border-top-right-radius: inherit;
+            border-top-left-radius: inherit;
+        }
+
+        .details {
+            padding: 15px;
+            
+            p,h3,div {
+                margin: 8px 0;
+            }
+            .line {
+                height: 2px;
+                background: #d0d0ba;
+            }
+        }
+    }
+}
