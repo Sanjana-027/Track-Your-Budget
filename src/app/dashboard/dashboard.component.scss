@@ -32,12 +32,13 @@
             margin: 13px;
             border-radius: 20px;
             background-color: rgb(61, 149, 60);
+            position: relative;
 
             .card-photo {
                 width: 100%;
                 border-radius: inherit;
                 height: 55%;
-                position: relative;
+
 
                 img {
                     width: inherit;
@@ -47,13 +48,15 @@
                     border-top-right-radius: inherit;
                 }
 
-                .pencil {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    padding: 10px;
-                    cursor: pointer;
-                }
+
+            }
+
+            .pencil {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                cursor: pointer;
+                transition: all .5s;
             }
 
             .card-details {
@@ -94,11 +97,12 @@
                 .card-photo {
                     transition: all .5s;
                     filter: blur(3px);
+                }
 
-                    .pencil {
-                        top: 50%;
-                        right: 50%;
-                    }
+                .pencil {
+                    top: 30%;
+                    right: 50%;
+                    transform: translate(50%, -50%);
                 }
             }
 
