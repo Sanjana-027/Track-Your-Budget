@@ -1,75 +1,38 @@
 <div class="main-container">
     <div class="add-goal">
-        <button class="btn1">ADD Goal</button>
+        <button class="btn1" routerLink="/add-goals">ADD Goal</button>
     </div>
     <div class="heading1">
         <h1>Track Your Budget</h1>
         <p>Take control of your saving goals</p>
     </div>
+
+
     <div class="card-container">
-        <div class="card">
-            <div class="card-photo">
-                <img src="assets/svg-icons/mountain.svg">
+        <ng-container *ngFor="let goal of goals">
+            <div class="card">
+                <div class="card-photo">
+                    <img src="assets/svg-icons/mountain.svg">
 
-            </div>
-            <div class="pencil">
-                <span>⭐</span>
-            </div>
-            <div class="card-details">
-                <h1>Mountains</h1>
-                <div class="line">
                 </div>
-                <div class="card-content">
-                    <div class="saved">
-                        <p>Amount saved</p>
-                        <p><span>$340.00 </span>out of <span>$10,000.00</span></p>
+                <div class="pencil">
+                    <span routerLink="/goal-details">⭐</span>
+                </div>
+                <div class="card-details">
+                    <h1>{{goal.goalTitle}}</h1>
+                    <div class="line">
                     </div>
-                    <div class="icon"></div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-        <div class="card">
-            <div class="card-photo">
-                <img src="assets/svg-icons/mountain.svg">
-            </div>
-            <div class="card-details">
-                <h1>Mountains</h1>
-                <div class="line">
-                </div>
-                <div class="card-content">
-                    <div class="saved">
-                        <p>Amount saved</p>
-                        <p><span>$340.00 </span>out of <span>$10,000.00</span></p>
+                    <div class="card-content">
+                        <div class="saved">
+                            <p>Amount saved</p>
+                            <p><span>{{goal.amountSaved | currency }} </span>out of <span>{{goal.totalAmount | currency }}</span></p>
+                        </div>
+                        <div class="icon"></div>
                     </div>
-                    <div class="icon"></div>
                 </div>
 
             </div>
-        </div>
-        <div class="card">
-            <div class="card-photo">
-                <img src="assets/svg-icons/mountain.svg">
-            </div>
-            <div class="card-details">
-                <h1>Mountains</h1>
-                <div class="line">
-                </div>
-                <div class="card-content">
-                    <div class="saved">
-                        <p>Amount saved</p>
-                        <p><span>$340.00 </span>out of <span>$10,000.00</span></p>
-                    </div>
-                    <div class="icon"></div>
-                </div>
-
-            </div>
-        </div>
-
-
+        </ng-container>
 
     </div>
 </div>

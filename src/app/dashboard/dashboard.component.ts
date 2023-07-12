@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from '../app.sevice';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+  goals: any;
 
+  constructor(private appService: AppService) {}
+
+  ngOnInit() {
+    this.goals = this.appService.getAllGoals();
+  }
 }

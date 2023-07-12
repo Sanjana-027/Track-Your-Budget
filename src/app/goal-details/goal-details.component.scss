@@ -1,4 +1,5 @@
 .main-container {
+    text-align: center;
 
     h2 {
         text-align: center;
@@ -25,8 +26,13 @@
         .details {
             padding: 15px;
             
-            p,h3,div {
+            p,input,div {
                 margin: 8px 0;
+            }
+            input {
+                border: none;
+                outline: none;
+                text-align: center;
             }
             .line {
                 height: 2px;
@@ -34,4 +40,21 @@
             }
         }
     }
+
+    .correct-icon {
+        background: white;
+        height: 81px;
+        border-radius: 50%;
+        padding: 17px;
+        text-align: center;
+        margin-top: 25px;
+        transition: all 0.2s;
+
+        &:hover {
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+
+    
 }
