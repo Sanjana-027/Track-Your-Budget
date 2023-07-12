@@ -14,46 +14,29 @@
     <div class="box">
         <h3>Most Common</h3>
         <div class="box-head">
-            <div class="box1" routerLink="/goal-details">
-                <img src="assets/svg-icons/house.svg">
-                <p>property</p>
-            </div>
-            <div class="box1"  routerLink="/goal-details">
-                <img src="../../assets/svg-icons/property.jpg">
-                <p>property</p>
-            </div>
-            <div class="box1">
-                <img src="../../assets/svg-icons/wedding.svg">
-                <p>property</p>
-            </div>
-        </div>
-        
-        <h3>Other goals</h3>
-        <div class="box-content">    
-            <div class="content-box1"  routerLink="/goal-details">
-                <img src="../../assets/svg-icons/bike.jpg">
-                <div class="content">
-                    <h3>Heading</h3>
-                    <p>Value</p>
+            <ng-container *ngFor="let commonGoal of goalTypes.commonGoals">
+                <div class="box1" routerLink="/goal-details">
+                    <img src={{commonGoal.image}}>
+                    <p>{{commonGoal.title}}</p>
                 </div>
-            </div>
-            <div class="line"></div>
-            <div class="content-box1">
-                <img src="../../assets/svg-icons/car.svg">
-                <div class="content">
-                    <h3>Heading</h3>
-                    <p>Value</p>
-                </div>
-            </div>
-            <div class="line"></div>
-            <div class="content-box1">
-                <img src="../../assets/svg-icons/mountain.svg">
-                <div class="content">
-                    <h3>Heading</h3>
-                    <p>Value</p>
-                </div>
-            </div>
+            </ng-container>
 
+        </div>
+
+        <h3>Other goals</h3>
+        <div class="box-content">
+
+            <ng-container *ngFor="let otherGoal of goalTypes.otherGoals">
+                <div class="content-box1" routerLink="/goal-details">
+                    <img src={{otherGoal.image}}>
+                    <div class="content">
+                        <h3>{{otherGoal.title}}</h3>
+                        <p>{{otherGoal.goalTitle}}</p>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+            </ng-container>
         </div>
     </div>
 
