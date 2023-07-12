@@ -10,9 +10,9 @@
 
     <div class="card-container">
         <ng-container *ngFor="let goal of goals">
-            <div class="card">
+            <div class="card" [ngStyle]="{'background-color': 'getGoalColor(goal)'}">
                 <div class="card-photo">
-                    <img src="assets/svg-icons/mountain.svg">
+                    <img src="{{ getGoalImg(goal) }}">
 
                 </div>
                 <div class="pencil">
