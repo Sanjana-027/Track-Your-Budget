@@ -15,7 +15,7 @@
         <h3>Most Common</h3>
         <div class="box-head">
             <ng-container *ngFor="let commonGoal of goalTypes.commonGoals">
-                <div class="box1" routerLink="/goal-details">
+                <div class="box1" [routerLink]="['/goal-details', commonGoal.id]">
                     <img src={{commonGoal.image}}>
                     <p>{{commonGoal.title}}</p>
                 </div>
@@ -27,7 +27,7 @@
         <div class="box-content">
 
             <ng-container *ngFor="let otherGoal of goalTypes.otherGoals">
-                <div class="content-box1" routerLink="/goal-details">
+                <div class="content-box1" [routerLink]="['/goal-details', otherGoal.id]">
                     <img src={{otherGoal.image}}>
                     <div class="content">
                         <h3>{{otherGoal.title}}</h3>

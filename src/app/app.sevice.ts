@@ -27,5 +27,9 @@ export class AppService {
         return this.allGoals;
     }
 
+    addGoal(currGoal: any) {
+        this.allGoals.push(currGoal);
+    }
+
 
 }

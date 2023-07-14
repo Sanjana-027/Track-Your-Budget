@@ -1,8 +1,8 @@
 <div class="main-container">
-    <h2>Travel</h2>
+    <h2>{{goalType.title}}</h2>
 
-    <div class="card">
-        <img src="../../assets/svg-icons/mountain.svg">
+    <div class="card" [ngStyle]="{'background-color': goalType.color }">
+        <img src={{goalType.image}}>
         
         <div class="details">
             <p>Goal title</p>
@@ -15,5 +15,5 @@
         </div>
     </div>
 
-    <img class="correct-icon" routerLink="/dashboard" src="../../assets/svg-icons/correct-icon.svg">
+    <img class="correct-icon" routerLink="/dashboard" src="../../assets/svg-icons/correct-icon.svg" (click)="saveGoal()">
 </div>
