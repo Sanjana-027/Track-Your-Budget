@@ -15,8 +15,11 @@ export class GoalDetailsComponent {
     this.route.params.subscribe((res: any) => {
       const goals = this.appService.goalTypes;
       this.goalType = [...goals.commonGoals, ...goals.otherGoals].filter(g => g.id == res.id)[0];
-      console.log(this.goalType)
+      
     })
+    const editId = this.route.snapshot.queryParamMap.get("id");
+    if (editId)
+      this.fetchAndUpdate(editId);
   }
 
   ngOnInit() {}
@@ -26,6 +29,10 @@ export class GoalDetailsComponent {
     this.currentGoal.title = this.goalType.title;
     this.appService.addGoal(this.currentGoal);
     
+  }
+
+  fetchAndUpdate(id: any) {
+    this.currentGoal = this.appService.getAllGoals().filter(res => res.id == id)[0];
   }
 
 }

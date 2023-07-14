@@ -4,11 +4,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddGoalsComponent } from './add-goals/add-goals.component';
 import { GoalDetailsComponent } from './goal-details/goal-details.component';
 
-const routes: Routes= [
-  { path:"", redirectTo:"/dashboard", pathMatch:"full"},
-  { path:"dashboard", component: DashboardComponent},
-  { path:"add-goals", component: AddGoalsComponent},
-  { path:"goal-details/:id", component: GoalDetailsComponent},
+const routes: Routes = [
+  { path: "", redirectTo: "/dashboard", pathMatch: "full" },
+  { path: "dashboard", component: DashboardComponent },
+  { path: "add-goals", component: AddGoalsComponent },
+  { path: "goal-details/:id", component: GoalDetailsComponent },
 ]
 
 @NgModule({
