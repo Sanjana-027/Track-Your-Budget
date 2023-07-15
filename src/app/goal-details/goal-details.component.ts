@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from '../app.sevice';
 import { ActivatedRoute } from '@angular/router';
+import { Goal } from '../model/goals';
 
 @Component({
   selector: 'app-goal-details',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GoalDetailsComponent {
   goalType:any;
-  currentGoal = { "id": 0, "goalTypeId": 0, "title": "", "goalTitle": "", "totalAmount": "", "amountSaved": "0" };
+  currentGoal = {} as Goal;
 
   constructor(private appService: AppService, private route: ActivatedRoute) {
     this.route.params.subscribe((res: any) => {
@@ -25,9 +26,11 @@ export class GoalDetailsComponent {
   ngOnInit() {}
 
   saveGoal() {
-    this.currentGoal.goalTypeId = this.goalType.id;
-    this.currentGoal.title = this.goalType.title;
-    this.appService.addGoal(this.currentGoal);
+    if (!this.currentGoal.id) {
+      this.currentGoal.goalTypeId = this.goalType.id;
+      this.currentGoal.title = this.goalType.title;
+      this.appService.addGoal(this.currentGoal);
+    }
     
   }
 

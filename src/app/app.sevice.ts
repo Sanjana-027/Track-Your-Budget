@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Goal } from './model/goals';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AppService {
 
-    allGoals = [
+    allGoals: Goal[] = [
         { "id": 1, "goalTypeId": 4, "title": "Travel", "goalTitle": "Mountain Trip", "totalAmount": "10000", "amountSaved": "340" },
         { "id": 2, "goalTypeId": 1, "title": "Property", "goalTitle": "New House", "totalAmount": "100000", "amountSaved": "56550" }
     ];
@@ -27,10 +28,9 @@ export class AppService {
         return this.allGoals;
     }
 
-    addGoal(currGoal: any) {
+    addGoal(currGoal: Goal) {
         currGoal.id = this.allGoals.length + 1;
         this.allGoals.push(currGoal);
     }
-
 
 }
