@@ -25,6 +25,6 @@ export class DashboardComponent {
 
   getGoalColor(goal: any) {
     const a = this.goalTypes.filter((i: any) => goal.goalTypeId == i.id)[0].color;
-    console.log(a);
+    return a;
   }
 }

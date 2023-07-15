@@ -8,7 +8,7 @@ import { AppService } from '../app.sevice';
   styleUrls: ['./add-goals.component.scss']
 })
 export class AddGoalsComponent {
-
+  searchText : String = "";
   goalTypes : any;
 
   constructor(private appService: AppService) {}
@@ -18,3 +18,4 @@ export class AddGoalsComponent {
   }
 
 }
+

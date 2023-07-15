@@ -6,7 +6,7 @@
         <h2>Select goal that you want to add</h2>
 
         <div class="input-search">
-            <input type="text" placeholder="search">
+            <input type="text" placeholder="search" [(ngModel)]="searchText">
             <img src="assets/svg-icons/search-icon.svg">
         </div>
     </div>
@@ -14,11 +14,14 @@
     <div class="box">
         <h3>Most Common</h3>
         <div class="box-head">
+
             <ng-container *ngFor="let commonGoal of goalTypes.commonGoals">
-                <div class="box1" [routerLink]="['/goal-details', commonGoal.id]">
-                    <img src={{commonGoal.image}}>
-                    <p>{{commonGoal.title}}</p>
-                </div>
+                <ng-container *ngIf="commonGoal.title.toLowerCase().indexOf(searchText.toLowerCase().trim()) >= 0">
+                    <div class="box1" [routerLink]="['/goal-details', commonGoal.id]">
+                        <img src={{commonGoal.image}}>
+                        <p>{{commonGoal.title}}</p>
+                    </div>
+                </ng-container>
             </ng-container>
 
         </div>
@@ -27,15 +30,18 @@
         <div class="box-content">
 
             <ng-container *ngFor="let otherGoal of goalTypes.otherGoals">
-                <div class="content-box1" [routerLink]="['/goal-details', otherGoal.id]">
-                    <img src={{otherGoal.image}}>
-                    <div class="content">
-                        <h3>{{otherGoal.title}}</h3>
-                        <p>{{otherGoal.goalTitle}}</p>
+                <ng-container *ngIf="otherGoal.title.toLowerCase().indexOf(searchText.toLowerCase().trim()) >= 0">
+                    <div class="content-box1" [routerLink]="['/goal-details', otherGoal.id]">
+                        <img src={{otherGoal.image}}>
+                        <div class="content">
+                            <h3>{{otherGoal.title}}</h3>
+                            <p>{{otherGoal.goalTitle}}</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="line"></div>
+
+                    <div class="line"></div>
+                </ng-container>
             </ng-container>
         </div>
     </div>

@@ -16,7 +16,7 @@
 
                 </div>
                 <div class="pencil">
-                    <span [routerLink]="['/goal-details', goal.goalTypeId]" [queryParams]="{ id: goal.id}">⭐</span>
+                    <img src="assets/svg-icons/edit-icon.svg" [routerLink]="['/goal-details', goal.goalTypeId]" [queryParams]="{ id: goal.id}">
                 </div>
                 <div class="card-details">
                     <h1>{{goal.goalTitle}}</h1>
