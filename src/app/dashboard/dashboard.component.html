@@ -12,7 +12,7 @@
         <ng-container *ngFor="let goal of goals">
             <div class="card" [ngStyle]="{'background-color': getGoalColor(goal)}">
                 <div class="card-photo">
-                    <img src="{{ getGoalImg(goal) }}">
+                    <img src="{{ getGoalImg(goal.goalTypeId) }}">
 
                 </div>
                 <div class="pencil">

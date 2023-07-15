@@ -18,13 +18,13 @@ export class DashboardComponent {
     this.goalTypes = [...types.commonGoals, ...types.otherGoals];
   }
 
-  getGoalImg(goal: any) {
-    const a = this.goalTypes.filter((i: any) => goal.goalTypeId == i.id)[0].image;
+  getGoalImg(goalId: any) {
+    const a = this.goalTypes.filter((i: any) => i.id == goalId)[0].image;
     return a;
   }
 
   getGoalColor(goal: any) {
-    const a = this.goalTypes.filter((i: any) => goal.goalTypeId == i.id)[0].color;
+    const a = this.goalTypes.filter((i: any) => i.id == goal.goalTypeId)[0].color;
     return a;
   }
 }
