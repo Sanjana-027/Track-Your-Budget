@@ -25,12 +25,31 @@ export class AppService {
     };
 
     getAllGoals() {
+        var temp = this.loadFromLocalStorage();
+        if (temp) {
+            this.allGoals = temp;
+        }
         return this.allGoals;
+
     }
 
     addGoal(currGoal: Goal) {
         currGoal.id = this.allGoals.length + 1;
         this.allGoals.push(currGoal);
+        this.saveInLocalStorage();
+
     }
 
+    editGoal() {
+        this.saveInLocalStorage();
+    }
+
+
+    saveInLocalStorage() {
+        localStorage.setItem("savedGoals", JSON.stringify(this.allGoals));
+    }
+    loadFromLocalStorage() {
+        var a: any = localStorage.getItem("savedGoals");
+        return JSON.parse(a);
+    }
 }

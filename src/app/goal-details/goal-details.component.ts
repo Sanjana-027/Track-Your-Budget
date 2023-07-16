@@ -31,11 +31,14 @@ export class GoalDetailsComponent {
       this.currentGoal.title = this.goalType.title;
       this.appService.addGoal(this.currentGoal);
     }
+    else this.appService.editGoal();
+    
     
   }
 
   fetchAndUpdate(id: any) {
     this.currentGoal = this.appService.getAllGoals().filter(res => res.id == id)[0];
   }
+
 
 }
